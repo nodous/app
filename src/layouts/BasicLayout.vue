@@ -29,7 +29,7 @@
    </div>
 </template>
 <script>
-import { Tabbar, TabbarItem, Group, Cell } from 'vux'
+import { Tabbar, TabbarItem, Group, Cell, Swiper} from 'vux'
 
 export default {
     data () {
@@ -41,7 +41,8 @@ export default {
     Tabbar,
     TabbarItem,
     Group,
-    Cell
+    Cell,
+    Swiper
   }
 }
 </script>
@@ -62,4 +63,5 @@ export default {
 .add {
   width:64%;
 }
+.vux-tabbar-simple .weui-tabbar__label {}
 </style>

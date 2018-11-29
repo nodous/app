@@ -55,13 +55,42 @@
           </div>
       </flexbox-item>
     </flexbox>
+    <swiper loop auto :list="demo06_list" :aspect-ratio="300/1000" :index="demo06_index" @on-index-change="demo06_onIndexChange"></swiper>
+    <group>
+      <cell title="思雪会员" is-link>
+        <div class="badge-value">
+          <span class="vertical-middle"></span>
+          <badge></badge>
+        </div>
+      </cell>
+      <cell title="思雪惠东" is-link>
+        <div class="badge-value">
+          <span class="vertical-middle"></span>
+          <badge ></badge>
+        </div>
+      </cell>
+      <cell title="我的专题" is-link>
+        <div class="badge-value">
+          <span class="vertical-middle"></span>
+          <badge></badge>
+        </div>
+      </cell>
+    </group>
+    <group>
+      <cell title="设置" is-link>
+        <div class="badge-value">
+          <span class="vertical-middle"></span>
+          <badge></badge>
+        </div>
+      </cell>
+    </group>
   </div>
 </template>
 <script>
-import {Panel, Flexbox, FlexboxItem} from 'vux'
+import {Panel, Flexbox, FlexboxItem, Swiper, Group, Cell, Badge} from 'vux'
 export default {
     components: {
-        Panel, Flexbox, FlexboxItem
+        Panel, Flexbox, FlexboxItem, Swiper, Badge, Cell, Group
     },
     data () {
         return {
@@ -72,7 +101,14 @@ export default {
                 title: '王冠',
                 desc: '查看或更改個人資料',
                 url: '/component/cell'
-            }]
+            }],
+            demo06_list: [
+                {img: './src/assets/logo1.jpg'},
+                {img: './src/assets/logo2.jpg'},
+                {img: './src/assets/logo3.jpg'},
+                {img: './src/assets/logo4.jpg'}
+            ],
+            demo06_index: 0
         }
     },
     methods: {
@@ -81,6 +117,12 @@ export default {
         },
         onImgError (item, $event) {
             console.log(item, $event)
+        },
+        demo06_onIndexChange (index) {
+          this.demo06_index = index
+        },
+        onSwiperItemIndexChange (index) {
+            console.log('demo item change', index)
         }
     }
 }
@@ -91,7 +133,9 @@ export default {
 }
 .right {
     float: right;
-
+}
+.vux-slider {
+    margin:8px 0;
 }
 .tiemFont{
    font-size: 13px;

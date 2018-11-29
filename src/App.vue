@@ -15,5 +15,6 @@ export default {
 @import '~vux/src/styles/1px.less';
 body {
   background-color: #fbf9fe;
+  overflow: hidden;
 }
 </style>
