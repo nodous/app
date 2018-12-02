@@ -2,7 +2,7 @@
    <div>
       <router-view></router-view>
     <tabbar>
-      <tabbar-item>
+      <tabbar-item selected link="homepage"> 
         <img slot="icon" src="../assets/demo/homepage.png">
         <img slot="icon-active" src="../assets/demo/homepage_fill.png">
         <span slot="label">首页</span>
@@ -16,11 +16,11 @@
           <img class="add" src="../assets/demo/add.png">
         </span>
       </tabbar-item>
-      <tabbar-item selected link="/component/demo">
+      <tabbar-item link="/component/demo">
          <img slot="icon" src="../assets/demo/mail.png">
         <span slot="label">消息</span>
       </tabbar-item>
-      <tabbar-item>
+      <tabbar-item link="mine">
         <img slot="icon" src="../assets/demo/people.png">
         <img slot="icon-active" src="../assets/demo/people_fill.png">
         <span slot="label">我的</span>
@@ -34,7 +34,6 @@ import { Tabbar, TabbarItem, Group, Cell, Swiper} from 'vux'
 export default {
     data () {
        return {
-
        }
     },
     components: {
@@ -63,5 +62,4 @@ export default {
 .add {
   width:64%;
 }
-.vux-tabbar-simple .weui-tabbar__label {}
 </style>
